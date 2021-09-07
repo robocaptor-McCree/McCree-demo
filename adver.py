@@ -17,7 +17,7 @@ print(model)#모델 구조 프린트
 
 
 # 이미지 불러오기
-img = Image.open('001.jpg')
+img = Image.open('001.png')
 # 이미지를 텐서로 변환하기
 img_transforms = transforms.Compose([
     transforms.Resize((224, 224), Image.BICUBIC),
@@ -99,6 +99,7 @@ a[0].imshow(original_img_view)
 
 # 적대적 예제
 a[1].imshow(perturbed_data_view)
+plt.imsave("001.png", original_img_view)
 
 plt.imsave("001_adv.png", perturbed_data_view)
 plt.show()
